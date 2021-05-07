@@ -1,0 +1,52 @@
+<div id="wrapper">
+    <div class="head"><h2>Tire Fitment</h2></div>
+    <div [class.loading]="(loading$ | async)" id="shopping-list" *ngIf="!(error$ | async); else error">
+      <div id="list" class="container">
+       <div class="row first">
+          <mat-form-field appearance="fill">
+            <mat-label>Year</mat-label>
+            <mat-select [formControl]="years"(selectionChange)="onYearChange($event)">
+              <mat-option *ngFor="let year of yearList.year" [value]="year">{{year}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          </div>
+          <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>Make</mat-label>
+            <mat-select [formControl]="makes"(selectionChange)="onMakeChange($event)">
+              
+              <mat-option *ngFor="let make of makeList.make" [value]="make">{{make}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          </div>
+          <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>Model</mat-label>
+            <mat-select [formControl]="models"(selectionChange)="onModelChange($event)">
+              
+              <mat-option *ngFor="let model of modelList.model" [value]="model">{{model}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+            </div>
+            <div class="row">
+          <mat-form-field appearance="fill">
+            <mat-label>Trim</mat-label>
+            <mat-select [formControl]="trims"(selectionChange)="onTrimChange($event)">
+              
+              <mat-option *ngFor="let trim of trimList.trim" [value]="trim">{{trim}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          </div>
+          <div class="row">
+            <h3 *ngIf="trimSelected"> Selected value <span class="selected"> {{trimSelected}} </span></h3>
+            </div>
+      
+      </div>
+  
+     
+    </div>
+  </div>
+  
+  <ng-template #error>
+    <h2>{{(error$ | async)?.message}}</h2>
+  </ng-template>
