@@ -10,6 +10,7 @@ import { TireReducer } from './store/reducers/tiredata.reducer';
 import { ShoppingEffects } from './store/effects/tiredata.effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,8 @@ import {MatSelectModule} from '@angular/material/select';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({shopping: TireReducer}),
     EffectsModule.forRoot([ShoppingEffects]),
     BrowserAnimationsModule,

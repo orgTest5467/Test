@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { TireService } from 'src/app/tire.service';
+import { TireService } from '../../../app/tire.service';
 import { LoadMakeAction, LoadMakeFailureAction, LoadMakeSuccessAction, LoadModelAction, LoadModelFailureAction, LoadModelSuccessAction, LoadTrimAction, LoadTrimFailureAction, LoadTrimSuccessAction, LoadYearAction, LoadYearFailureAction, LoadYearSuccessAction, TireActionTypes } from '../actions/tiredata.action';
 
 @Injectable()
